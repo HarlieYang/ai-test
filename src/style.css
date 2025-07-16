@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+  /* 这些是原始HTML中定义的自定义Tailwind CSS工具类。
+    为了让它们在Vue组件中生效，请确保您的项目已正确配置Tailwind CSS，
+    并且您的tailwind.config.js文件包含了这些颜色和字体。
+  */
+@layer utilities {
+    .content-auto {
+        content-visibility: auto;
+    }
+    .input-focus {
+        @apply focus:ring-2 focus:ring-primary/50 focus:border-primary focus:outline-none;
+    }
+    .btn-primary {
+        @apply bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 disabled:bg-primary/50 disabled:shadow-none disabled:cursor-not-allowed;
+    }
+    .btn-secondary {
+        @apply bg-white border border-gray-300 hover:bg-gray-50 text-neutral font-medium py-2 px-4 rounded-lg transition-all duration-200 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed;
+    }
+    .btn-warning {
+        @apply bg-warning hover:bg-warning/90 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200;
+    }
+    .card {
+        @apply bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-lg;
+    }
+    .toast {
+        @apply fixed right-4 top-4 px-6 py-3 rounded-lg shadow-lg z-50 transform transition-all duration-300 ease-in-out;
+    }
+    .toast-success {
+        @apply bg-secondary text-white;
+    }
+    .toast-error {
+        @apply bg-danger text-white;
+    }
+    .toast-warning {
+        @apply bg-warning text-white;
+    }
+    .step-active {
+        @apply bg-primary text-white;
+    }
+    .step-completed {
+        @apply bg-primary/20 text-primary;
+    }
+    .step-pending {
+        @apply bg-gray-200 text-gray-500;
+    }
+    .key-valid {
+        @apply border-green-500 ring-green-500/30;
+    }
+    .key-invalid {
+        @apply border-red-500 ring-red-500/30;
+    }
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  /* display: flex;
+  place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #000000;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}
